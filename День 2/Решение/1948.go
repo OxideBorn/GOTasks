@@ -11,13 +11,13 @@ func main() {
 		fmt.Println("n/a")
 
 	} else {
-		var x int
+		var maxnumber int
 		for i := 1; i <= a; i++ {
 			if isSimple(i) == true && isDivider(i, a) == true {
-				x = i
+				maxnumber = i
 			}
 		}
-		fmt.Println(x)
+		fmt.Println(maxnumber)
 	}
 }
 
@@ -33,7 +33,7 @@ func isSimple(i int) bool {
 	//}
 	//return true
 	for j := 1; j <= i; j++ {
-		if i%j == 0 && j != 1 && j != i {
+		if isRemain(i, j) == 0 && j != 1 && j != i {
 			return false
 		}
 	}
@@ -41,8 +41,21 @@ func isSimple(i int) bool {
 }
 
 func isDivider(i, a int) bool {
-	if a%i == 0 {
+	if isRemain(a, i) == 0 {
 		return true
 	}
 	return false
+}
+func isRemain(num1, num2 int) int {
+
+	for {
+		if num1 >= num2 {
+			num1 -= num2
+
+		} else {
+			break
+		}
+
+	}
+	return num1
 }
