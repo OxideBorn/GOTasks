@@ -12,6 +12,7 @@ func main() {
 	fmt.Scan(&n)
 	for i := 0; i <= n; i++ {
 		num, num1 = num+num1, num
-		fmt.Println(num + num1)
+		//fmt.Print(num+num1, "\t")
 	}
+	fmt.Printf("%d член числа Фибоначчи,%d", n, num+num1)
 }
